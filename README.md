@@ -1,6 +1,6 @@
 # ForgeDev Fintech (React)
 
-> Banking dashboard + transactions API — React/Next.js frontend
+> Banking dashboard + transactions — React + Vite + TypeScript + Zustand
 
 **Part of [ForgeDev](https://forgedev.dev)** — Structured work simulation for junior developers.
 
@@ -30,7 +30,60 @@ Contributions are welcome! Please read:
 
 ## 🏗 Project Structure
 
-> TODO: Document the project structure once the codebase is built.
+```
+src/
+├── api/
+│   └── index.ts            # API client with all endpoints
+├── stores/
+│   ├── accounts.ts          # Account store (zustand)
+│   ├── transactions.ts      # Transaction store
+│   └── budgets.ts           # Budget store
+├── pages/
+│   ├── DashboardPage.tsx    # Account overview + balance
+│   ├── TransactionsPage.tsx # Transaction table with pagination + filters
+│   ├── TransferPage.tsx     # Transfer form
+│   ├── BudgetsPage.tsx      # Budget list + charts
+│   └── AuditLogPage.tsx     # Audit log viewer
+├── components/
+│   ├── TransactionTable.tsx
+│   ├── AccountCard.tsx
+│   ├── TransferForm.tsx
+│   ├── BudgetChart.tsx
+│   └── FilterBar.tsx
+├── types/
+│   └── index.ts
+├── utils/
+│   └── format.ts
+├── assets/
+│   └── main.css
+├── App.tsx
+└── main.tsx
+```
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server (connects to backend at localhost:3000)
+npm run dev
+```
+
+---
+
+## 📊 Domain
+
+**Fintech — Banking dashboard + transactions**
+
+Features:
+- Dashboard with account overview and balance cards
+- Transaction feed with pagination, filtering, and sorting
+- Transfer flow between accounts with form validation
+- Budget analytics with visual charts
+- Audit log viewer for compliance
 
 ---
 
@@ -44,8 +97,10 @@ Contributions are welcome! Please read:
 
 ## 📁 Related Repositories
 
-Part of the **Fintech** domain. This frontend connects to:
+Part of the **Fintech** domain:
 
 | Repo | Role |
 |------|------|
 | forgedev-fintech-backend | Backend API |
+| forgedev-fintech-vue | Vue 3 frontend |
+| forgedev-fintech-react | React frontend (this repo) |
